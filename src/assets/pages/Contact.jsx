@@ -1,4 +1,3 @@
-import React from 'react';
 import '../stylesheets/Contact.css'; // estilos separados
 
 function Contact() {
