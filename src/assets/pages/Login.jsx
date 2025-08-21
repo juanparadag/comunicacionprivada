@@ -39,7 +39,7 @@ function Login() {
   return (
     <>
       <div className="title">
-        <h1>Login page</h1>
+        <h1>Inicio de sesion</h1>
       </div>
       <div className="login">
         <div className="login-box">

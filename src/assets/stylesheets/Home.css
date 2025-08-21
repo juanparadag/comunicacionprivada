@@ -1,0 +1,85 @@
+.home-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.hero {
+   font-family: "Rockwell", "Courier New", Courier, serif;
+  text-align: center;
+  padding: 60px 20px;
+  background-image:url("../images/FondoAzulCiber.png")
+}
+
+.hero h1 {
+  color: white;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.hero p {
+  color: white;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.hero button {
+  padding: 0.8em 1.5em;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.info-section {
+  margin: 40px 0;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+
+.logos-section .logos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.logo-placeholder {
+  background-color: #ddd;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 10px;
+  font-size: 1em;
+  width: 100%;
+  max-width: 400px;
+}
+
+.contact-section button {
+  padding: 0.8em;
+  font-size: 1em;
+  cursor: pointer;
+  width: 150px;
+}

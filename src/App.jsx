@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./assets/stylesheets/App.css"
 import Home from "./assets/pages/Home";
 import Login from "./assets/pages/Login";
+import Contact from "./assets/pages/Contact";
 import SignUp from "./assets/pages/SignUp";
 import "./assets/stylesheets/App.css"
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <nav className="navbar">
         <Link to="/">Inicio</Link> |{" "}
         <Link to="/login">Login</Link> |{" "}
+        <Link to="/contact">Contact Us</Link> |{" "}
       </nav>
 
       {/* Definición de rutas */}
@@ -20,6 +22,7 @@ function App() {
         <Route path="*" element={<Home/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   </>);
