@@ -1,5 +1,5 @@
 import "../stylesheets/Home.css"; // separar estilos
-import ContactForm from "../components/Contactform";
+import ContactForm from "../components/ContactForm";
 import ExclusiveAppSection from "../components/ExclusiveAppSection";
 import InfoSection from "../components/InfoSection";
 import HeroSection from "../components/HeroSection";
