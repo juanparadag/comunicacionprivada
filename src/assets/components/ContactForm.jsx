@@ -1,15 +1,17 @@
+import React from "react";
+import { Link } from 'react-router-dom'; // Importa Link
+import "../stylesheets/Contactform.css";
+
 export default function ContactForm() {
   return (
     <section className="contact-section">
-      <h2>Si quieres trabajar en la Ciberseguridad de tu empresa ¡Contáctanos!</h2>
-      <form>
-        <input type="text" placeholder="Empresa *" required />
-        <input type="text" placeholder="Nombre *" required />
-        <input type="tel" placeholder="Teléfono *" required />
-        <input type="email" placeholder="Email *" required />
-        <textarea placeholder="Comentario o mensaje" required />
-        <button type="submit">Enviar</button>
-      </form>
+      <h2>Únete a nuestra plataforma</h2>
+      <p>
+        Para empezar a proteger tu empresa, regístrate en nuestra plataforma.
+      </p>
+      <Link to="/signup"> {/* Usa Link para navegar a /signup */}
+        <button className="register-button">Deseo registrarme</button>
+      </Link>
     </section>
   );
 }

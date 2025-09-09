@@ -1,0 +1,24 @@
+.contact-section {
+  text-align: center; /* Centra el contenido del botón */
+  padding: 50px 0;
+}
+
+.contact-section h2, .contact-section p {
+  color: white; /* Asegura que el texto sea visible */
+  margin-bottom: 20px;
+}
+
+.register-button {
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #0056b3;
+}

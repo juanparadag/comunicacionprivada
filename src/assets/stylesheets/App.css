@@ -1,3 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.contenedor-principal {
+ width: 100vw;
+  min-height: 100vh;
+}
 .navbar {
   background-color: #1e1e2f; /* Fondo oscuro */
   padding: 12px 20px;
@@ -23,8 +39,10 @@
   border-bottom: 2px solid #ff9800; /* Resalta la página activa */
 }
 
+
 .title {
   display: flex;
   justify-content: center;
   background-color: #e6e6ec;
 }
+
