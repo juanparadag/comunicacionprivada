@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom'; // Importa Link
 import "../stylesheets/Contactform.css";
 
-export default function ContactForm() {
+export default function Contactform() {
   return (
     <section className="contact-section">
       <h2>Únete a nuestra plataforma</h2>

@@ -1,5 +1,5 @@
 import "../stylesheets/Home.css"; // separar estilos
-import ContactForm from "../components/Contactform";
+import Contactform from "../components/Contactform";
 import ExclusiveAppSection from "../components/ExclusiveAppSection";
 import InfoSection from "../components/InfoSection";
 import HeroSection from "../components/HeroSection";
@@ -56,7 +56,7 @@ function Home() {
         </div>
       </InfoSection>
       <ExclusiveAppSection />
-      <ContactForm />
+      <Contactform />
       <Footer />
     </div>
   );
