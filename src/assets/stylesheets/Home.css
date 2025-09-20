@@ -5,7 +5,7 @@
   color: white;
 }
 
-/* HERO */
+
 .hero {
   background-image: url(../images/FondoAzulCiber.png);
   color: white;
@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 
-/* SECCIONES */
+
 .info-section {
   margin: 40px 0;
   box-sizing: border-box;
@@ -40,7 +40,7 @@
   overflow-x: hidden;
 }
 
-/* CARDS DE SERVICIOS */
+
 .cards-container {
   display: flex;
   gap: 20px;
@@ -102,7 +102,6 @@
   object-fit: cover; 
   border: 3px solid #555252;
 }
-/* RESPONSIVE MEDIA QUERIES */
 /* Móviles pequeños*/
 @media (max-width: 480px) {
   .hero h1 {
@@ -120,7 +119,7 @@
 
   .card {
     max-width: 90%;
-    min-width: unset; /* 👈 evita que fuerce ancho mayor */
+    min-width: unset; 
   }
 }
 
@@ -138,7 +137,7 @@
   .card {
     flex: 1 1 45%;
     max-width: 45%;
-    min-width: unset; /* 👈 asegura ajuste */
+    min-width: unset; 
   }
 }
 
