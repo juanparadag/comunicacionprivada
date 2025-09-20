@@ -24,7 +24,7 @@ function Home() {
       <InfoSection title="Nuestros Servicios">
         <div className="cards-container">
           <div className="card">
-            <img
+            <img className="round-image"
               src="https://trueconf.com/images/encryption/server.png"
               alt="Servicio 1"
             />
@@ -34,7 +34,7 @@ function Home() {
             </p>
           </div>
           <div className="card">
-            <img
+            <img className="round-image"
               src="https://www.ufinet.com/wp-content/uploads/2025/06/Image_fx1371.jpg"
               alt="Servicio 2"
             />
@@ -44,7 +44,7 @@ function Home() {
             </p>
           </div>
           <div className="card">
-            <img
+            <img  className="round-image" 
               src="https://static.vecteezy.com/system/resources/previews/039/302/910/non_2x/experience-concept-line-icon-simple-element-illustration-experience-concept-outline-symbol-design-vector.jpg"
               alt="Servicio 3"
             />
