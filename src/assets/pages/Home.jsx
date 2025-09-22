@@ -1,3 +1,4 @@
+//importaciones
 import "../stylesheets/Home.css"; // separar estilos
 import Contactform from "../components/Contactform";
 import ExclusiveAppSection from "../components/ExclusiveAppSection";
@@ -5,8 +6,10 @@ import InfoSection from "../components/InfoSection";
 import HeroSection from "../components/HeroSection";
 import Footer from "../components/Footer";
 
+// Definición del componente funcional "Home"
 function Home() {
   return (
+     // Contenedor principal de toda la página de inicio
     <div className="home-page">
       <HeroSection />
 
@@ -22,6 +25,7 @@ function Home() {
       </InfoSection>
 
       <InfoSection title="Nuestros Servicios">
+         {/* Contenedor que agrupa las tarjetas de servicios */}
         <div className="cards-container">
           <div className="card">
             <img className="round-image"
@@ -55,9 +59,10 @@ function Home() {
           </div>
         </div>
       </InfoSection>
-      <ExclusiveAppSection />
-      <Contactform />
-      <Footer />
+      <ExclusiveAppSection /> {/* Sección exclusiva de la app */}
+      <Contactform /> {/* Formulario de contacto */}
+      <Footer /> {/* Footer */}
+
     </div>
   );
 }

@@ -1,27 +1,30 @@
+/* Aplica a todos los elementos */
 * {
-  box-sizing: border-box;
-  max-width: 100%;
+  box-sizing: border-box; /* Hace que padding y border se incluyan dentro del ancho/alto total del elemento */
+  max-width: 100%; /* Evita que los elementos se salgan del ancho máximo del contenedor */
 }
 
-
+/* Estilos generales para la página */
 html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
+  margin: 0;              /* Quita márgenes */
+  padding: 0;             /* Quita padding */
+  width: 100%;            /* Ocupa el 100% del ancho */
+  height: 100%;           /* Ocupa el 100% de la altura */
+  overflow-x: hidden;     /* Oculta el scroll horizontal si algo se desborda */
 }
 
-
+/* Contenedor raíz */
 #root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;      /* Garantiza que ocupe toda la altura de la ventana */
+  display: flex;          /* Activa Flexbox */
+  flex-direction: column; /* Ordena los hijos en columna de arriba a abajo */
 }
+/* Contenedor principal de la página */
 .contenedor-principal {
- width: 100vw;
-  min-height: 100vh;
+  width: 100vw;           /* Ocupa todo el ancho de la ventana */
+  min-height: 100vh;      /* Ocupa al menos toda la altura visible */
 }
+/* Barra de navegación */
 .navbar {
   background-color: #1e1e2f; /* Fondo oscuro */
   padding: 12px 20px;
@@ -29,7 +32,7 @@ html, body {
   gap: 20px;
   align-items: center;
 }
-
+/* Estilo base para la navbar */
 .navbar a {
   color: #ffffff; /* Texto blanco */
   text-decoration: none;
@@ -37,17 +40,16 @@ html, body {
   font-size: 16px;
   transition: color 0.3s ease, transform 0.2s ease;
 }
-
+/* Efecto hover */
 .navbar a:hover {
   color: #ff9800; /* Color al pasar el mouse */
   transform: translateY(-2px); /* Efecto sutil */
 }
-
+/* Estilo para el link de la página activa */
 .navbar a.active {
   border-bottom: 2px solid #ff9800; /* Resalta la página activa */
 }
-
-
+/* Estilo de títulos o secciones */
 .title {
   display: flex;
   justify-content: center;
