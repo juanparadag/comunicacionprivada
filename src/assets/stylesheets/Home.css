@@ -112,10 +112,9 @@
   border: 3px solid #555252;
 }
 
-
 /* Responsive */
 
-/* Móviles pequeños */
+/* Móviles */
 @media (max-width: 480px) {
   .hero h1 {
     font-size: 1.8em;  /* Reduce el título */
