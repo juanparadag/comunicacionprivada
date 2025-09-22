@@ -1,7 +1,9 @@
+//Importaciones
 import React from "react";
 import { Link } from 'react-router-dom'; // Importa Link
 import "../stylesheets/Contactform.css";
 
+   {/* Contiene información de contacto */}
 export default function Contactform() {
   return (
     <section className="contact-section">

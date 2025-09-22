@@ -1,7 +1,9 @@
+/* Estilo global para el body */
 body {
   background-color: #121212; 
 }
 
+/* Contenedor principal de la página de contacto */
 .contact-page {
   max-width: 900px;
   margin: 40px auto;
@@ -11,6 +13,7 @@ body {
   line-height: 1.6;
 }
 
+/* Título principal de la página */
 .contact-page h1 {
   font-size: 2rem;
   text-align: center;
@@ -18,12 +21,14 @@ body {
   color: #fff; 
 }
 
+/* Párrafos generales en la página */
 .contact-page p {
   text-align: center;
   margin-bottom: 20px;
   color: #ccc; 
 }
 
+/* Caja de información de contacto */
 .contact-info {
   background: #1e1e1e; 
   padding: 20px;
@@ -32,6 +37,7 @@ body {
   margin-bottom: 30px;
 }
 
+/* Título dentro de la caja de contacto */
 .contact-info h3 {
   display: flex;
   justify-content: center;
@@ -40,16 +46,19 @@ body {
   color: #fff; 
 }
 
+/* Texto dentro de la caja de contacto */
 .contact-info p {
   margin: 6px 0;
   font-size: 1rem;
   color: #ccc; 
 }
 
+/* Palabras destacadas dentro de la caja de contacto */
 .contact-info strong {
   color: #e0e0e0; 
 }
 
+/* Estilos del mapa */
 .contact-map iframe {
   border-radius: 12px;
   width: 100%;

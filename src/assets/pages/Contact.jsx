@@ -1,5 +1,8 @@
+// Importaciones
 import '../stylesheets/Contact.css'; // estilos separados
 import Footer from "../components/Footer";
+
+// Definición del componente funcional "Contact"
 function Contact() {
   return (
     <>
@@ -17,6 +20,7 @@ function Contact() {
         <p><strong>Dirección:</strong> Bogotá, Colombia</p>
       </div>
 
+        {/* Sección que contiene el mapa de Google */}
       <div className="contact-map">
         <iframe
         title="Ubicación"
@@ -29,6 +33,7 @@ function Contact() {
         ></iframe>
       </div>
     </div>
+      {/* Footer */}
       <Footer/>
       </>
   );

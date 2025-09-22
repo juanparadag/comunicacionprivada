@@ -1,3 +1,4 @@
+/* Estilos generales del footer */
 .footer {
   background-color: #0b1a36;
   color: white;
@@ -5,41 +6,49 @@
   font-size: 14px;
 }
 
+/* Contenedor interno del footer que organiza el contenido en columnas */
 .footer-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
 }
 
+/* Títulos principales del footer */
 .footer h3 {
   font-size: 22px;
   margin-bottom: 10px;
 }
 
+/* Subtítulos dentro del footer */
 .footer h4 {
   font-size: 16px;
   margin-bottom: 10px;
   color: #9ac8f3;
 }
 
+/* Estilos para los enlaces del footer */
 .footer a {
   color: #9ac8f3;
   text-decoration: none;
 }
 
+/* Efecto hover en los enlaces */
 .footer a:hover {
   text-decoration: underline;
 }
 
+/* Párrafos dentro del footer */
 .footer p {
   margin: 5px 0;
 }
 
+/* Listas dentro del footer */
 .footer ul {
   list-style: none;
   padding: 0;
 }
 
+/* Elementos de la lista */
 .footer ul li {
   margin-bottom: 6px;
 }

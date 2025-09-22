@@ -1,14 +1,16 @@
+//importaciones
 import React from "react";
 import { Link } from "react-router-dom";
 import "../stylesheets/SignUp.css"
 import Footer from "../components/Footer";
 
+  // Función que se ejecuta al hacer clic en el botón "Registrarse"
 function SignUp() {
   function enviarDatos (){
     alert("Algo salio mal intentalo mas tarde")
   }
   return (
-    <div className="signup">
+    <div className="signup"> {/* Contenedor principal de la página de registro */}
       <div className="title">
         <h1>Registro de nuevo usuario</h1>
       </div>
@@ -17,6 +19,7 @@ function SignUp() {
           <p className="form-intro">
             Regístrate para acceder a nuestra aplicación de chat cifrado. Con tus datos, podrás iniciar sesión en la app móvil.
           </p>
+             {/* Formulario de registro */}
           <form>
             <div className="input-field">
               <input type="text" placeholder="Nombre de usuario" required />

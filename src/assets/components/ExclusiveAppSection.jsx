@@ -1,6 +1,6 @@
 export default function ExclusiveAppSection() {
   return (
-    <section className="exclusive-app">
+    <section className="exclusive-app">    {/* Sección intermedia que contiene aplicación exclusiva */}
       <h3>Aplicación Exclusiva</h3>
       <p>
         Entendemos que la experiencia del usuario es clave. 

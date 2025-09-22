@@ -1,154 +1,166 @@
+/* Estilos generales de la página de inicio */
 .home-page {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background-color: black;
-  color: white;
+  font-family: Arial, sans-serif; 
+  padding: 20px;                  
+  background-color: black;        
+  color: white;                   
 }
 
 
+/* Hero */
 .hero {
   background-image: url(../images/FondoAzulCiber.png);
-  color: white;
-  padding: 40px;
-  text-align: center;
-  width: 100%; 
-  max-width: 100%;
-  box-sizing: border-box;
+  color: white;                                       
+  padding: 40px;                                       
+  text-align: center;                                  
+  width: 100%;                                         
+  max-width: 100%;                                     
+  box-sizing: border-box;                              
 }
 
 .hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
+  font-size: 2.5em;       /* Título grande */
+  margin-bottom: 0.5em;   /* Espacio debajo del título */
 }
 
 .hero p {
-  font-size: 1.2em;
-  margin-bottom: 1em;
+  font-size: 1.2em;       /* Texto descriptivo más grande que lo normal */
+  margin-bottom: 1em;     /* Espacio debajo */
 }
 
 .hero button {
-  padding: 0.8em 1.5em;
-  font-size: 1em;
-  cursor: pointer;
+  padding: 0.8em 1.5em;   /* Relleno interno horizontal y vertical */
+  font-size: 1em;         /* Tamaño estándar del texto */
+  cursor: pointer;        /* Cambia el cursor a "mano" */
 }
 
 
+/* Sección de información */
 .info-section {
-  margin: 40px 0;
-  box-sizing: border-box;
-  max-width: 100%;
-  overflow-x: hidden;
+  margin: 40px 0;        /* Espacio arriba y abajo */
+  box-sizing: border-box; 
+  max-width: 100%;       /* No se pasa del ancho */
+  overflow-x: hidden;    /* Oculta scroll horizontal si algo se sale */
 }
 
 
+/* Contenedor de tarjetas */
 .cards-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap; 
-  max-width: 100%;  /*asegura que no se pase */
+  display: flex;            
+  gap: 20px;                
+  justify-content: center;  
+  flex-wrap: wrap;          
+  max-width: 100%; 
   box-sizing: border-box;
 }
 
 .card {
-  flex: 1;
-  text-align: center;
-  max-width: 300px;
-  min-width: 250px;
+  flex: 1;                  
+  text-align: center;       
+  max-width: 300px;         
+  min-width: 250px;         
 }
 
 .card img {
-  width: 120px;
+  width: 120px;             /* Imagen cuadrada */
   height: 120px;
-  object-fit: contain;
-  margin-bottom: 10px;
+  object-fit: contain;      /* Mantiene proporciones sin recortar */
+  margin-bottom: 10px;      /* Espacio debajo de la imagen */
 }
 
 
+/* Sección app exclusiva */
 .exclusive-app {
-  margin: 40px 0;
-  text-align: center;
+  margin: 40px 0;           /* Espaciado arriba/abajo */
+  text-align: center;       /* Centra el contenido */
 }
 
 
+/* Sección de contacto */
 .contact-section {
-  margin: 40px 0;
-  text-align: center;
+  margin: 40px 0;           /* Espaciado arriba/abajo */
+  text-align: center;       /* Centra el formulario */
 }
 
 .contact-section form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
+  display: flex;            /* Flexbox para alinear */
+  flex-direction: column;   /* Organiza en columna */
+  gap: 15px;                /* Espacio entre campos */
+  align-items: center;      
 }
 
 .contact-section input,
 .contact-section textarea {
-  padding: 10px;
-  font-size: 1em;
-  width: 100%;
-  max-width: 400px;
+  padding: 10px;            /* Espaciado interno */
+  font-size: 1em;           /* Tamaño estándar del texto */
+  width: 100%;              /* Ocupa todo el ancho disponible */
+  max-width: 400px;         
 }
 
 .contact-section button {
-  padding: 0.8em;
-  font-size: 1em;
-  cursor: pointer;
-  width: 150px;
+  padding: 0.8em;           /* Relleno interno */
+  font-size: 1em;           /* Texto estándar */
+  cursor: pointer;          /* Manito al pasar encima */
+  width: 150px;             /* Botón fijo */
 }
+
+
+/* Imagenes*/
 .round-image {
-   border-radius: 50%;
-  object-fit: cover; 
+  border-radius: 50%;       /* Convierte la imagen en círculo */
+  object-fit: cover;        /* Recorta para llenar el contenedor */
   border: 3px solid #555252;
 }
-/* Móviles pequeños*/
+
+/* Responsive */
+
+/* Móviles */
 @media (max-width: 480px) {
   .hero h1 {
-    font-size: 1.8em;
+    font-size: 1.8em;  /* Reduce el título */
   }
 
   .hero p {
-    font-size: 1em;
+    font-size: 1em;   /* Texto más pequeño */
   }
 
   .cards-container {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Las tarjetas se apilan */
+    align-items: center;    /* Centra las tarjetas */
   }
 
   .card {
-    max-width: 90%;
-    min-width: unset; 
+    max-width: 90%;   /* Las tarjetas ocupan casi todo el ancho */
+    min-width: unset; /* Sin ancho mínimo */
   }
 }
 
-/*Tablets*/
+/* Tablets */
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2.2em;
+    font-size: 2.2em; /* Título intermedio */
   }
 
   .cards-container {
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     justify-content: center;
   }
 
   .card {
-    flex: 1 1 45%;
+    flex: 1 1 45%;    /* Dos tarjetas por fila */
     max-width: 45%;
     min-width: unset; 
   }
 }
 
-/*Laptops/Desktops*/
+/* Laptops / Desktops */
 @media (min-width: 1024px) {
   .cards-container {
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: row;        /* Las tarjetas se distribuyen en fila */
+    justify-content: space-around; /* Separación equitativa */
   }
 
   .card {
-    max-width: 300px;
+    max-width: 300px; /* Ancho fijo de tarjeta en pantallas grandes */
   }
 }
