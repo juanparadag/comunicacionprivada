@@ -1,45 +1,60 @@
-//importaciones
-import React from "react";
-import { Link } from "react-router-dom";
-import "../stylesheets/SignUp.css"
+import React, { useState } from "react";
+import "../stylesheets/SignUp.css";
 import Footer from "../components/Footer";
+import { registrarUsuario } from "../../api/register";
 
-  // Función que se ejecuta al hacer clic en el botón "Registrarse"
 function SignUp() {
-  function enviarDatos (){
-    alert("Algo salio mal intentalo mas tarde")
+  const [formData, setFormData] = useState({
+    user: "",
+    password: "",
+    email: ""
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+    const response = await registrarUsuario(formData);
+    const data = await response.json(); // Parsear JSON
+
+    if (data.status === "ok") {
+      alert("Usuario registrado con éxito");
+    } else {
+      alert("❌ " + (data.message || "Algo salió mal. Inténtalo más tarde."));
+      console.error("Error backend:", data);
+    }
+  } catch (error) {
+    alert("❌ Algo salió mal. Inténtalo más tarde.");
+    console.error(error);
   }
+  };
+
   return (
-    <div className="signup"> {/* Contenedor principal de la página de registro */}
+    <div className="signup">
       <div className="title">
         <h1>Registro de nuevo usuario</h1>
       </div>
       <div className="sign">
         <div className="sign-box">
           <p className="form-intro">
-            Regístrate para acceder a nuestra aplicación de chat cifrado. Con tus datos, podrás iniciar sesión en la app móvil.
+            Regístrate para acceder a la aplicación de chat cifrado. 
+            Con tus datos podrás iniciar sesión en la app móvil.
           </p>
-             {/* Formulario de registro */}
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="input-field">
-              <input type="text" placeholder="Nombre de usuario" required />
-              <p className="field-explanation">
-                Elige un nombre para identificarte en la aplicación. Este será tu <strong>usuario de inicio de sesión</strong>.
-              </p>
+              <input type="text" name="user" placeholder="Nombre de usuario" onChange={handleChange} required />
             </div>
             <div className="input-field">
-              <input type="password" placeholder="Contraseña" required />
-              <p className="field-explanation">
-                Crea una <strong>contraseña segura</strong> para proteger tu cuenta y acceder a tu chat.
-              </p>
+              <input type="password" name="password" placeholder="Contraseña" onChange={handleChange} required />
             </div>
             <div className="input-field">
-              <input type="email" placeholder="Correo electrónico" required />
-              <p className="field-explanation">
-                Usa un <strong>correo real</strong>. Te ayudará a <strong>recuperar tu cuenta</strong> si olvidas tu contraseña.
-              </p>
+              <input type="email" name="email" placeholder="Correo electrónico" onChange={handleChange} required />
             </div>
-            <button type="submit" onClick={enviarDatos}>Registrarse</button>
+            <button type="submit">Registrarse</button>
           </form>
         </div>
       </div>
