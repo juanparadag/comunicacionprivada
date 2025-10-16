@@ -1,166 +1,214 @@
-/* Estilos generales de la página de inicio */
-.home-page {
-  font-family: Arial, sans-serif; 
-  padding: 20px;                  
-  background-color: black;        
-  color: white;                   
+/* ====== HOME GENERAL ====== */
+body {
+  background-color: #0a192f;
+  color: #e6edf2;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+.home-page {
+  margin: 0;
+  padding: 0;
+}
 
-/* Hero */
+/* ====== HERO ====== */
 .hero {
-  background-image: url(../images/FondoAzulCiber.png);
-  color: white;                                       
-  padding: 40px;                                       
-  text-align: center;                                  
-  width: 100%;                                         
-  max-width: 100%;                                     
-  box-sizing: border-box;                              
+  background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)),
+    url("../images/FondoAzulCiber.png") center/cover no-repeat;
+  color: #ffffff;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.hero-content {
+  max-width: 800px;
+  background: rgba(17, 34, 64, 0.7);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .hero h1 {
-  font-size: 2.5em;       /* Título grande */
-  margin-bottom: 0.5em;   /* Espacio debajo del título */
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #00b4d8;
 }
 
 .hero p {
-  font-size: 1.2em;       /* Texto descriptivo más grande que lo normal */
-  margin-bottom: 1em;     /* Espacio debajo */
+  font-size: 1.2rem;
+  color: #cfd8e3;
+  margin-bottom: 2rem;
 }
 
-.hero button {
-  padding: 0.8em 1.5em;   /* Relleno interno horizontal y vertical */
-  font-size: 1em;         /* Tamaño estándar del texto */
-  cursor: pointer;        /* Cambia el cursor a "mano" */
+.hero-button {
+  background-color: #00b4d8;
+  color: #0a192f;
+  border: none;
+  border-radius: 30px;
+  padding: 0.9em 2em;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
 }
 
+.hero-button:hover {
+  background-color: #0090b8;
+  transform: scale(1.05);
+}
 
-/* Sección de información */
+/* ====== INFO SECTION ====== */
 .info-section {
-  margin: 40px 0;        /* Espacio arriba y abajo */
-  box-sizing: border-box; 
-  max-width: 100%;       /* No se pasa del ancho */
-  overflow-x: hidden;    /* Oculta scroll horizontal si algo se sale */
+  margin: 80px auto;
+  text-align: center;
+  max-width: 900px;
 }
 
+.info-section p {
+  line-height: 1.7;
+  font-size: 1.1em;
+  color: #cfd8e3;
+}
 
-/* Contenedor de tarjetas */
+/* ====== CARDS ====== */
 .cards-container {
-  display: flex;            
-  gap: 20px;                
-  justify-content: center;  
-  flex-wrap: wrap;          
-  max-width: 100%; 
-  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .card {
-  flex: 1;                  
-  text-align: center;       
-  max-width: 300px;         
-  min-width: 250px;         
+  background: #112240;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  width: 280px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 180, 216, 0.3);
 }
 
 .card img {
-  width: 120px;             /* Imagen cuadrada */
-  height: 120px;
-  object-fit: contain;      /* Mantiene proporciones sin recortar */
-  margin-bottom: 10px;      /* Espacio debajo de la imagen */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #00b4d8;
+  margin-bottom: 15px;
 }
 
-
-/* Sección app exclusiva */
-.exclusive-app {
-  margin: 40px 0;           /* Espaciado arriba/abajo */
-  text-align: center;       /* Centra el contenido */
+.card p {
+  font-size: 1em;
 }
 
-
-/* Sección de contacto */
+/* ====== CONTACTO ====== */
 .contact-section {
-  margin: 40px 0;           /* Espaciado arriba/abajo */
-  text-align: center;       /* Centra el formulario */
+  text-align: center;
+  margin: 80px 0;
 }
 
 .contact-section form {
-  display: flex;            /* Flexbox para alinear */
-  flex-direction: column;   /* Organiza en columna */
-  gap: 15px;                /* Espacio entre campos */
-  align-items: center;      
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
 .contact-section input,
 .contact-section textarea {
-  padding: 10px;            /* Espaciado interno */
-  font-size: 1em;           /* Tamaño estándar del texto */
-  width: 100%;              /* Ocupa todo el ancho disponible */
-  max-width: 400px;         
+  background-color: #1e2a47;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+  outline: 2px solid #00b4d8;
 }
 
 .contact-section button {
-  padding: 0.8em;           /* Relleno interno */
-  font-size: 1em;           /* Texto estándar */
-  cursor: pointer;          /* Manito al pasar encima */
-  width: 150px;             /* Botón fijo */
+  background-color: #00b4d8;
+  color: #0a192f;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.contact-section button:hover {
+  background-color: #0090b8;
+  transform: scale(1.05);
+}
+
+/* ====== MODO CLARO ====== */
+body:not(.dark) {
+  background-color: #eaf4ff;
+  color: #0a192f;
+}
+
+body:not(.dark) .hero {
+  background: linear-gradient(rgba(234, 244, 255, 0.9), rgba(234, 244, 255, 0.95)),
+    url("../images/FondoAzulCiber.png") center/cover no-repeat;
+  color: #0a192f;
+}
+
+body:not(.dark) .hero-content {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark) .hero h1 {
+  color: #0077b6;
+}
+
+body:not(.dark) .card {
+  background: #ffffff;
+  color: #0a192f;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark) .contact-section input,
+body:not(.dark) .contact-section textarea {
+  background-color: #ffffff;
+  color: #cfd8e3;
+}
+
+body:not(.dark) .contact-section button {
+  background-color: #0077b6;
+  color: #ffffff;
+}
+
+body:not(.dark) .info-section p {
+  line-height: 1.7;
+  font-size: 1.1em;
+  color: #10213e;
+}
+
+body:not(.dark) .hero p {
+  font-size: 1.2rem;
+  color: #10213e;
+  margin-bottom: 2rem;
 }
 
 
-/* Imagenes*/
-.round-image {
-  border-radius: 50%;       /* Convierte la imagen en círculo */
-  object-fit: cover;        /* Recorta para llenar el contenedor */
-  border: 3px solid #555252;
-}
-
-/* Responsive */
-
-/* Móviles */
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.8em;  /* Reduce el título */
-  }
-
-  .hero p {
-    font-size: 1em;   /* Texto más pequeño */
-  }
-
-  .cards-container {
-    flex-direction: column; /* Las tarjetas se apilan */
-    align-items: center;    /* Centra las tarjetas */
-  }
-
-  .card {
-    max-width: 90%;   /* Las tarjetas ocupan casi todo el ancho */
-    min-width: unset; /* Sin ancho mínimo */
-  }
-}
-
-/* Tablets */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.2em; /* Título intermedio */
-  }
-
-  .cards-container {
-    flex-wrap: wrap; 
-    justify-content: center;
-  }
-
-  .card {
-    flex: 1 1 45%;    /* Dos tarjetas por fila */
-    max-width: 45%;
-    min-width: unset; 
-  }
-}
-
-/* Laptops / Desktops */
-@media (min-width: 1024px) {
-  .cards-container {
-    flex-direction: row;        /* Las tarjetas se distribuyen en fila */
-    justify-content: space-around; /* Separación equitativa */
-  }
-
-  .card {
-    max-width: 300px; /* Ancho fijo de tarjeta en pantallas grandes */
-  }
+/* ====== TRANSICIÓN ====== */
+* {
+  transition: background-color 0.4s ease, color 0.4s ease;
 }

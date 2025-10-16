@@ -1,28 +1,62 @@
-/* Sección de contacto contenedor general del título, texto y botón */
 .contact-section {
-  text-align: center; /* Centra el contenido del botón */
-  padding: 50px 0;
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #0a192f 0%, #112240 100%);
+  color: #e6edf2;
 }
 
-/* Estilos para el título y párrafo dentro de la sección de contacto */
-.contact-section h2, .contact-section p {
-  color: white; /* Asegura que el texto sea visible */
+.contact-section h2 {
+  font-size: 2rem;
+  color: #00b4d8;
   margin-bottom: 20px;
 }
 
-/* Estilo del botón de registro */
-.register-button {
-  padding: 15px 30px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.contact-section p {
   font-size: 1.1rem;
-  transition: background-color 0.3s ease;
+  margin-bottom: 35px;
+  color: #cfd8e3;
 }
 
-/* Efecto hover para el botón */
+/* Botón */
+.register-button {
+  background: linear-gradient(90deg, #00b4d8, #0090b8);
+  color: #0a192f;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 180, 216, 0.3);
+  transition: all 0.3s ease;
+}
+
 .register-button:hover {
-  background-color: #0056b3;
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #00d4ff, #00b4d8);
+  box-shadow: 0 10px 25px rgba(0, 180, 216, 0.5);
+}
+
+/* ====== MODO CLARO ====== */
+body:not(.dark) .contact-section {
+  background: linear-gradient(180deg, #eaf4ff 0%, #cce5f6 100%);
+  color: #0a192f;
+}
+
+body:not(.dark) .contact-section h2 {
+  color: #0077b6;
+}
+
+body:not(.dark) .contact-section p {
+  color: #1a1a1a;
+}
+
+body:not(.dark) .register-button {
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  color: #ffffff;
+}
+
+body:not(.dark) .register-button:hover {
+  background: linear-gradient(90deg, #0090d8, #00cfff);
+  box-shadow: 0 10px 25px rgba(0, 119, 182, 0.4);
 }
