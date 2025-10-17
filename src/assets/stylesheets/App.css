@@ -1,58 +1,208 @@
-/* Aplica a todos los elementos */
+/* ====== REGLAS GENERALES ====== */
 * {
-  box-sizing: border-box; /* Hace que padding y border se incluyan dentro del ancho/alto total del elemento */
-  max-width: 100%; /* Evita que los elementos se salgan del ancho máximo del contenedor */
+  box-sizing: border-box;
+  max-width: 100%;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Estilos generales para la página */
 html, body {
-  margin: 0;              /* Quita márgenes */
-  padding: 0;             /* Quita padding */
-  width: 100%;            /* Ocupa el 100% del ancho */
-  height: 100%;           /* Ocupa el 100% de la altura */
-  overflow-x: hidden;     /* Oculta el scroll horizontal si algo se desborda */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  background-color: #0a192f;
+  color: #e6edf2;
 }
 
-/* Contenedor raíz */
-#root {
-  min-height: 100vh;      /* Garantiza que ocupe toda la altura de la ventana */
-  display: flex;          /* Activa Flexbox */
-  flex-direction: column; /* Ordena los hijos en columna de arriba a abajo */
+#root, .contenedor-principal {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-/* Contenedor principal de la página */
-.contenedor-principal {
-  width: 100vw;           /* Ocupa todo el ancho de la ventana */
-  min-height: 100vh;      /* Ocupa al menos toda la altura visible */
-}
-/* Barra de navegación */
+
+/* ====== NAVBAR ====== */
 .navbar {
-  background-color: #1e1e2f; /* Fondo oscuro */
-  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #112240 0%, #0a192f 100%);
+  padding: 8px 22px; /* 🔹 Menos alto, más compacto */
+  color: #e6edf2;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Ajusta tamaño del logo y enlaces */
+.navbar-logo a {
+  font-size: 0.8rem; /* antes 1.4rem */
+}
+
+.navbar-links a {
+  font-size: 0.7rem; /* antes 1rem */
+}
+
+/* Botón de tema un poco más pequeño */
+.theme-toggle {
+  padding: 5px 12px;
+  font-size: 0.85rem;
+  border-radius: 25px;
+}
+
+/* Botón hamburguesa también más sutil */
+.menu-toggle {
+  font-size: 0.8rem; /* antes 1.6rem */
+}
+
+
+/* Logo */
+.navbar-logo a {
+  color: #00b4d8;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Enlaces del menú */
+.navbar-links {
   display: flex;
   gap: 20px;
   align-items: center;
-}
-/* Estilo base para la navbar */
-.navbar a {
-  color: #ffffff; /* Texto blanco */
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-/* Efecto hover */
-.navbar a:hover {
-  color: #ff9800; /* Color al pasar el mouse */
-  transform: translateY(-2px); /* Efecto sutil */
-}
-/* Estilo para el link de la página activa */
-.navbar a.active {
-  border-bottom: 2px solid #ff9800; /* Resalta la página activa */
-}
-/* Estilo de títulos o secciones */
-.title {
-  display: flex;
-  justify-content: center;
-  background-color: #e6e6ec;
+  transition: all 0.3s ease;
 }
 
+.navbar-links a {
+  color: #e6edf2;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #00b4d8;
+}
+
+/* Botón modo oscuro/claro */
+.theme-toggle {
+  background: none;
+  border: 1px solid #00b4d8;
+  border-radius: 30px;
+  padding: 6px 15px;
+  cursor: pointer;
+  color: #00b4d8;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: #00b4d8;
+  color: #0a192f;
+}
+
+/* Botón menú hamburguesa */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #00b4d8;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* ====== MODO CLARO ====== */
+body:not(.dark) {
+  background-color: #f5f7fa;
+  color: #0a192f;
+}
+
+body:not(.dark) .navbar {
+  background: linear-gradient(90deg, #eaf4ff 0%, #cce5f6 100%);
+  color: #0a192f;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark) .navbar-logo a {
+  color: #0077b6;
+}
+
+body:not(.dark) .navbar-links a {
+  color: #0a192f;
+}
+
+body:not(.dark) .navbar-links a:hover {
+  color: #0077b6;
+}
+
+body:not(.dark) .theme-toggle {
+  border-color: #0077b6;
+  color: #0077b6;
+}
+
+body:not(.dark) .theme-toggle:hover {
+  background: #0077b6;
+  color: #ffffff;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    background: #112240;
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transform-origin: top;
+    transform: scaleY(0);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .navbar-links.active {
+    transform: scaleY(1);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .navbar-links a,
+  .theme-toggle {
+    width: 100%;
+    text-align: left;
+  }
+
+  body:not(.dark) .navbar-links {
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .navbar-logo a {
+    font-size: 1.2rem;
+  }
+}
+
+/* ====== TRANSICIONES GLOBALES ====== */
+* {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}

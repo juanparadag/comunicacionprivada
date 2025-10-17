@@ -9,31 +9,29 @@ function Footer() {
         
         {/* Logo + descripción */}
         <div className="footer-info">
-          <h3>CiberGuard</h3>
+          <h3>Comunicaciones Seguras</h3>
           <p>
-            Proveemos soluciones robustas en ciberseguridad para proteger a su empresa de las amenazas digitales.
+            Proveemos soluciones robustas en comunicacoines seguras para proteger a su empresa de las amenazas digitales.
           </p>
-          <p>© 2025 CiberGuard - Todos los derechos reservados.</p>
+          <p>© 2025 Comunicaciones Seguras - Todos los derechos reservados.</p>
         </div>
 
         {/* Enlaces rápidos */}
         <div className="footer-links">
           <h4>Nuestros Servicios</h4>
           <ul>
-            <li><a href="#">Análisis de Vulnerabilidades</a></li>
-            <li><a href="#">Gestión de Riesgos</a></li>
-            <li><a href="#">Respuesta a Incidentes</a></li>
-            <li><a href="#">Auditoría de Seguridad</a></li>
-            <li><a href="#">Formación en Ciberseguridad</a></li>
+            <li><a href="#">Mensajeria Segura</a></li>
+            <li><a href="#">Reuniones Seguras</a></li>
+            <li><a href="#">Respuesta a Incidentes</a></li>           
           </ul>
         </div>
 
         {/* Contacto */}
         <div className="footer-contact">
           <h4>Contáctanos</h4>
-          <p>+57 320 000 0000</p>
+          <p>+57 322 360 3288</p>
           
-          <p>contacto@ciberseguridad.com</p>
+          <p>soporteti@bmstecnology.com</p>
           <p>Bogotá, D.C., Colombia</p>
         </div>
 
