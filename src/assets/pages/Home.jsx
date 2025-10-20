@@ -5,6 +5,7 @@ import ExclusiveAppSection from "../components/ExclusiveAppSection";
 import InfoSection from "../components/InfoSection";
 import HeroSection from "../components/HeroSection";
 import Footer from "../components/Footer";
+import AboutSection from "../components/AboutSection";
 
 // Definición del componente funcional "Home"
 function Home() {
@@ -59,8 +60,9 @@ function Home() {
           </div>
         </div>
       </InfoSection>
-      <ExclusiveAppSection /> {/* Sección exclusiva de la app */}
       <Contactform /> {/* Formulario de contacto */}
+      <AboutSection />{/* Sección de informacion */}
+      {/* <ExclusiveAppSection /> {/* Sección exclusiva de la app */}
       <Footer /> {/* Footer */}
 
     </div>

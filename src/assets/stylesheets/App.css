@@ -14,6 +14,7 @@ html, body {
   font-family: "Poppins", sans-serif;
   background-color: #0a192f;
   color: #e6edf2;
+  scroll-behavior: smooth;
 }
 
 #root, .contenedor-principal {
@@ -28,7 +29,7 @@ html, body {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(90deg, #112240 0%, #0a192f 100%);
-  padding: 8px 22px; /* 🔹 Menos alto, más compacto */
+  padding: 8px 22px; /* compacto */
   color: #e6edf2;
   position: sticky;
   top: 0;
@@ -36,37 +37,20 @@ html, body {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
 }
 
-/* Ajusta tamaño del logo y enlaces */
-.navbar-logo a {
-  font-size: 0.8rem; /* antes 1.4rem */
-}
-
-.navbar-links a {
-  font-size: 0.7rem; /* antes 1rem */
-}
-
-/* Botón de tema un poco más pequeño */
-.theme-toggle {
-  padding: 5px 12px;
-  font-size: 0.85rem;
-  border-radius: 25px;
-}
-
-/* Botón hamburguesa también más sutil */
-.menu-toggle {
-  font-size: 0.8rem; /* antes 1.6rem */
-}
-
-
-/* Logo */
+/* LOGO */
 .navbar-logo a {
   color: #00b4d8;
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
+  transition: color 0.3s ease;
 }
 
-/* Enlaces del menú */
+.navbar-logo a:hover {
+  color: #48cae4;
+}
+
+/* ENLACES DEL MENÚ */
 .navbar-links {
   display: flex;
   gap: 20px;
@@ -78,6 +62,7 @@ html, body {
   color: #e6edf2;
   text-decoration: none;
   font-size: 1rem;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
@@ -85,7 +70,7 @@ html, body {
   color: #00b4d8;
 }
 
-/* Botón modo oscuro/claro */
+/* ====== BOTÓN MODO OSCURO/CLARO ====== */
 .theme-toggle {
   background: none;
   border: 1px solid #00b4d8;
@@ -102,15 +87,17 @@ html, body {
   color: #0a192f;
 }
 
-/* Botón menú hamburguesa */
+/* ====== BOTÓN MENÚ HAMBURGUESA ====== */
 .menu-toggle {
-  display: none;
+  display: none;               /* oculto en escritorio */
   background: none;
   border: none;
   color: #00b4d8;
   font-size: 1.6rem;
   cursor: pointer;
   transition: transform 0.3s ease;
+  z-index: 1101;               /* siempre encima */
+  position: relative;
 }
 
 .menu-toggle:hover {
@@ -159,7 +146,7 @@ body:not(.dark) .theme-toggle:hover {
 
   .navbar-links {
     position: absolute;
-    top: 65px;
+    top: 60px;
     right: 20px;
     background: #112240;
     border-radius: 12px;
@@ -172,12 +159,15 @@ body:not(.dark) .theme-toggle:hover {
     transform: scaleY(0);
     visibility: hidden;
     opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s;
   }
 
   .navbar-links.active {
     transform: scaleY(1);
     visibility: visible;
     opacity: 1;
+    pointer-events: auto;
   }
 
   .navbar-links a,
@@ -198,11 +188,62 @@ body:not(.dark) .theme-toggle:hover {
   }
 
   .navbar-logo a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 
 /* ====== TRANSICIONES GLOBALES ====== */
 * {
   transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+
+/* ====== SCROLLBAR PERSONALIZADO ====== */
+
+/* Estilo general (modo oscuro) */
+body.dark::-webkit-scrollbar {
+  width: 10px;
+}
+
+body.dark::-webkit-scrollbar-track {
+  background: #0a192f; /* Fondo oscuro */
+}
+
+body.dark::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00b4d8, #0077b6);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+body.dark::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0090b8, #00b4d8);
+}
+
+/* ====== MODO CLARO ====== */
+body:not(.dark)::-webkit-scrollbar {
+  width: 10px;
+}
+
+body:not(.dark)::-webkit-scrollbar-track {
+  background: #e0ecf9;
+}
+
+body:not(.dark)::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0077b6, #00b4d8);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+body:not(.dark)::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0090b8, #00b4d8);
+}
+
+/* Firefox */
+body {
+  scrollbar-color: #00b4d8 #0a192f; /* color thumb y track */
+  scrollbar-width: thin;
+}
+
+body:not(.dark) {
+  scrollbar-color: #0077b6 #e0ecf9;
 }

@@ -4,6 +4,9 @@ import "./assets/stylesheets/App.css";
 import Home from "./assets/pages/Home";
 import Contact from "./assets/pages/Contact";
 import SignUp from "./assets/pages/SignUp";
+import Instructions from "./assets/pages/Instructions";
+import ScrollToTop from "./assets/components/ScrollToTop";
+
 
 function App() {
   const [dark, setDark] = useState(() => {
@@ -21,6 +24,8 @@ function App() {
   return (
     <div className="contenedor-principal">
       <BrowserRouter>
+        <ScrollToTop />  {/* 👈 fuerza scroll al inicio */}
+        
         {/* NAVBAR */}
         <nav className="navbar">
           <div className="navbar-logo">
@@ -54,6 +59,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/instructions" element={<Instructions />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>
