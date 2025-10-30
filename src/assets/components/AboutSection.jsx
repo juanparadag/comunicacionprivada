@@ -28,7 +28,7 @@ export default function AboutSection() {
                 alt="Servicio 1"
               />
               <p>
-                Precios accesibles y competitivos: Solución económica que
+                <strong>Precios accesibles y competitivos:</strong> Solución económica que
                 elimina costos de licencias externas, ofreciendo un servicio
                 seguro y eficiente ajustado a cada empresa.
               </p>
@@ -39,7 +39,7 @@ export default function AboutSection() {
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScnE-KmhsZS2Mcim3KjJYIis9y3KACbAZBpA&s"
               />
               <p>
-                Adaptabilidad a cualquier entorno empresarial: Sistema flexible
+                <strong>Adaptabilidad a cualquier entorno empresarial:</strong> Sistema flexible
                 y escalable que se ajusta al tamaño y necesidades de cada
                 organización, garantizando integración fluida y segura.
               </p>
@@ -51,7 +51,7 @@ export default function AboutSection() {
                 alt="Servicio 3"
               />
               <p>
-                Control total y protección de datos: Gestión interna de la
+                <strong>Control total y protección de datos:</strong> Gestión interna de la
                 información con cifrado avanzado y servidores propios para
                 asegurar privacidad y control absoluto.
               </p>

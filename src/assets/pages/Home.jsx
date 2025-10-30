@@ -44,8 +44,8 @@ function Home() {
               alt="Servicio 2"
             />
             <p>
-              Plataforma robusta y optimizada: Un servicio sólido que funciona
-              de manera estable y eficiente..
+              Plataforma robusta y eficiente: Infraestructura estable, rápida y optimizada
+              para ofrecer rendimiento empresarial continuo, incluso en entornos exigentes o remotos.
             </p>
           </div>
           <div className="card">
