@@ -5,8 +5,6 @@ import { registrarUsuario } from "../../api/register";
 import { useNavigate } from "react-router-dom";
 
 
-
-
 function SignUp() {
   const navigate = useNavigate();
 
@@ -21,24 +19,27 @@ function SignUp() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await registrarUsuario(formData);
-      const data = await response.json();
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await registrarUsuario(formData);
+    const data = await response.json();
 
-      if (data.status === "ok") {
-        alert("✅ Usuario registrado con éxito.\nAhora puedes iniciar sesión desde la app Monocles.");
-        navigate("/instructions");
-      } else {
-        alert("❌ " + (data.message || "Algo salió mal. Inténtalo más tarde."));
-        console.error("Error backend:", data);
-      }
-    } catch (error) {
-      alert("❌ Algo salió mal. Inténtalo más tarde.");
-      console.error(error);
+    if (data.status === "ok") {
+      alert("✅ Usuario registrado con éxito.\nAhora puedes iniciar sesión desde la app Monocles.");
+      navigate("/instructions");
+    } else if (data.status === "exists") {
+      alert("⚠️ " + data.message);
+    } else {
+      alert("❌ " + (data.message || "Algo salió mal. Inténtalo más tarde."));
+      console.error("Error backend:", data);
     }
-  };
+  } catch (error) {
+    alert("❌ Error de conexión con el servidor.");
+    console.error(error);
+  }
+};
+
 
   return (
     <div className="signup">
