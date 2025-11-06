@@ -3,7 +3,7 @@ import "../stylesheets/SignUp.css";
 import Footer from "../components/Footer";
 import { registrarUsuario } from "../../api/register";
 import { useNavigate } from "react-router-dom";
-
+import emailjs from "emailjs-com";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -19,24 +19,55 @@ function SignUp() {
     setFormData({ ...formData, [name]: value });
   };
 
+  const datetime = new Date().toLocaleString("es-CO", {
+      timeZone: "America/Bogota",
+      dateStyle: "short",
+      timeStyle: "medium",
+    });
+
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const response = await registrarUsuario(formData);
+    const payload = { ...formData, datetime };
+    const response = await registrarUsuario(formData, payload);
     const data = await response.json();
 
     if (data.status === "ok") {
       alert("✅ Usuario registrado con éxito.\nAhora puedes iniciar sesión desde la app Monocles.");
+      emailjs.send(
+    "service_u8irbbp",        
+    "template_kqjsgur",       
+    {
+      email: formData.email,
+      user: formData.user,
+      password: formData.password
+    },
+    "wWKCHVEzIAXwgz9LJ"      
+  ).then(
+    //(response) => console.log("Correo enviado:", response),
+    //(error) => console.error("Error al enviar correo:", error)
+  );
+  emailjs.send(
+    "service_u8irbbp",
+    "template_fhezx47",      
+    {
+      user: formData.user,
+      email: formData.email,
+      datetime: datetime
+    },
+    "wWKCHVEzIAXwgz9LJ"
+  );
+
       navigate("/instructions");
     } else if (data.status === "exists") {
       alert("⚠️ " + data.message);
     } else {
       alert("❌ " + (data.message || "Algo salió mal. Inténtalo más tarde."));
-      console.error("Error backend:", data);
+      //console.error("Error backend:", data);
     }
   } catch (error) {
     alert("❌ Error de conexión con el servidor.");
-    console.error(error);
+    //console.error(error);
   }
 };
 
@@ -60,7 +91,7 @@ const handleSubmit = async (e) => {
             incluir una letra mayúscula, una minúscula y un número.
           </li>
           <li>
-            <strong>3️⃣ Correo electrónico:</strong> Usa un correo válido para recuperación y validación.
+            <strong>3️⃣ Correo electrónico:</strong> Usa un <strong>CORREO ELECTRONICO VALIDO </strong>para Verificacion.
           </li>
           <li>
             <strong>4️⃣ Después del registro:</strong> Abre la aplicación <strong>Monocles</strong> en tu móvil.
